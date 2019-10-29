@@ -17,6 +17,8 @@
         <td><%= link_to 'Show', chatroom %></td>
         <td><%= link_to 'Edit', edit_chatroom_path(chatroom) %></td>
         <td><%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Join', chatroom_chatroom_users_path(chatroom), method: :post %></td>
+        <td><%= link_to 'Leave', chatroom_chatroom_users_path(chatroom), method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,3 +27,10 @@
 <br>
 
 <%= link_to 'New Chatroom', new_chatroom_path %>
+
+<% if current_user %>
+  <%= link_to '로그아웃', destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to '회원가입', new_user_registration_path %>
+  <%= link_to '로그J', new_user_session_path %>
+<% end %>

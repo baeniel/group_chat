@@ -5,6 +5,7 @@ ruby '2.4.2'
 
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'devise-bootstrapped'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
